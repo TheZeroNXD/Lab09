@@ -11,11 +11,11 @@ public class Student {
         score = 0;
     }
 
-    public Student(String id, String name, double score) {
-        this.id = id;
-        this.name = name;
-        this.score = score;
-    }
+//    public Student(String id, String name, double score) {
+//        this.id = id;
+//        this.name = name;
+//        this.score = score;
+//    }
 
     public void changeName(String name) {
         if (!name.trim().isEmpty()) {
@@ -60,14 +60,14 @@ public class Student {
         return score;
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-                "id: '" + id + '\'' +
-                ", name: '" + name + '\'' +
-                ", score: " + score +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "{" +
+//                "id: '" + id + '\'' +
+//                ", name: '" + name + '\'' +
+//                ", score: " + score +
+//                '}';
+//    }
 
     @Override
     public boolean equals(Object obj) {
@@ -76,6 +76,29 @@ public class Student {
             return id.equals(other.id) && name.equals(other.name);
         }
         return false;
+    }
+
+    private Wallet wallet;
+
+    public Student(String id, String name, double score) {
+        this.id = id;
+        this.name = name;
+        this.score = score;
+        this.wallet = new Wallet();
+    }
+
+    public Wallet getWallet() {
+        return wallet;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", score=" + score +
+                ", wallet=" + wallet +
+                '}';
     }
 
 }

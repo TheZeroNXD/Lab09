@@ -1,11 +1,17 @@
 package ku.cs.models;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
+    private Student student;
 
+    @BeforeEach
+    public void setUp() {
+        student = new Student("123", "John", 75.0);
+    }
     @Test
     @DisplayName("ทดสอบการเพิ่มคะแนน 45.15 คะแนน")
     void testAddScore(){
@@ -93,5 +99,10 @@ class StudentTest {
         assertFalse(s.isId("7yyyyyyyyy"));
     }
 
+    @Test
+    @DisplayName("Test toString method")
+    public void testToString() {
+        assertEquals("Student{id='123', name='John', score=75.0, wallet=Wallet{balance=0.0}}", student.toString());
+    }
 
 }

@@ -14,7 +14,7 @@ public class BankAccount {
                 '}';
     }
 
-    public BankAccount(String accountNumber, String accountName) {
+    public BankAccount(String accountNumber, String accountName){
         this(accountNumber, accountName, 0);
     }
 
